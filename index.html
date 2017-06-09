@@ -1,0 +1,149 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Welcome to the USC CAVE Scene Preview Application</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<style>
+#div1 {
+    width: 350px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+
+#div2 {
+    width: 350px;
+    height: 70px;
+    padding: 10px;
+    border: 1px solid #aaaaaa;
+}
+table, td, th {
+    border: 1px solid black;
+    table-layout: fixed;
+}
+
+th {
+    max-width: 100px;
+    max-height: 100px;
+
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    table-layout: fixed;
+}
+
+td {
+    height: 100px;
+    width: 100px;
+    max-width: 100px;
+    max-height: 100px;
+    align: center;
+    vertical-align: bottom;
+}
+
+
+td.gallery {
+    width: 80px;
+    height: 45px;
+}
+
+.thumb {
+    height: 75px;
+    border: 1px solid #000;
+    margin: 10px 5px 0 0;
+}
+
+#upload-pic {
+    transition: opacity 0.4s ease-in-out;
+    margin: 10px;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#list {
+  height: 150px;
+  width: 150px;
+  float: left;
+  border: 2px solid #666666;
+  background-color: #ccc;
+  margin-right: 5px;
+  -webkit-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 3px #000;
+  -ms-box-shadow: inset 0 0 3px #000;
+  box-shadow: inset 0 0 3px #000;
+  text-align: center;
+  cursor: move;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>UPLOAD YOUR PICTURES</h2>
+
+<div id="upload-pic">
+  <input type="file" id="files" name="files[]" multiple />
+  <div id"upload-pic">
+  <output id="list" draggable="true" ondragstart="drag(event)"></output>
+</div>
+</div>
+
+<!-- <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div> -->
+
+<h2>Scene</h2>
+<table>
+  <tr>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  </tr>
+
+  <tr>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  </tr>
+
+  <tr>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  </tr>
+
+  <tr>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  </tr>
+</table>
+
+<br>
+<img id="drag1" src="USCLOGO.jpg" draggable="true" ondragstart="drag(event)" ondragend="dragend(event)" width="336" height="69">
+<img id="drag2" src="USCLOGO.jpg" draggable="true" ondragstart="drag(event)" ondragend="dragend(event)" width="336" height="69">
+
+</body>
+
+
+<script src="js/dnd.js"></script>
+<script src="js/upload.js"></script>
+
+</html>
