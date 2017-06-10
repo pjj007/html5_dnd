@@ -8,14 +8,17 @@ function drag(ev) {
 
 function drop(ev) {
     ev.preventDefault();
+    //var data = ev.dataTransfer.getData("text");
     var span = ev.dataTransfer.getData("text");
     while (ev.target.firstChild) {
     ev.target.removeChild(ev.target.firstChild);
     }
+    //var img = document.getElementById(data);
     var list1 = document.getElementById('list');
     console.log("ev:", ev, "img:", list1, "from:", ev.dataTransfer.dragStartedFrom);
     list1.width = 150;
     list1.height = 100;
+    //ev.target.appendChild(img);
     ev.target.appendChild(list1);
 }
 

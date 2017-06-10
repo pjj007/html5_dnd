@@ -10,7 +10,6 @@ var config = {
   messagingSenderId: "298384793473"
 };
 firebase.initializeApp(config);
-
 var email = "leo.shigenaga@gmail.com";
 var passwd = "ict342cave";
 firebase.auth().signInWithEmailAndPassword(email, passwd).catch(function(error) {
@@ -32,9 +31,10 @@ function upload_image(img_name, img_data) {
   console.log("Uploading", img_name, "data:", img_data);
   var ref = imagesRef.child(img_name);
   ref.put(img_data).then(function(snapshot) {
-      console.log('Uploaded ' + img_name + " successfully.");
+    console.log('Uploaded ' + img_name + " successfully.");
   });
 }
+
 
 function handleFileSelect(ev) {
   var files = ev.target.files; // FileList object
@@ -61,7 +61,10 @@ function handleFileSelect(ev) {
         upload_image(file.name, file);
       };
     })(f);
+
     // Read in the image file as a data URL.
     reader.readAsDataURL(f);
   }
 }
+
+document.getElementById('files').addEventListener('change', handleFileSelect, false);
