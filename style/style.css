@@ -10,24 +10,54 @@
        height: 300px;
        margin: 20px auto;
 }
-#holder.hover { border: 10px dashed #333; }
+#holder.hover {
+  border: 10px dashed #333;
+}
 
-table, td, th {
-    border: 1px solid black;
+#submitbtn {
+  margin: 10px 10px 10px 0;
+}
+
+#upload-pic {
+    transition: opacity 0.4s ease-in-out;
+    margin: 20px;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+td, th {
+    /*border: 1px solid black;
+    width: 105%;
+    padding: 15px;*/
+
+    min-height: 100px;
+      width: 200px;
+      border: 3px dashed #ccc;
+      margin: 10px;
+      padding: 10px;
 }
 
 table {
+    /*border: 1px solid black;*/
+    padding: 10px;
+    margin: 10px;
     border-collapse: collapse;
     width: 100%;
 }
 
+#table_layout {
+  border: 1px solid black;
+  width: auto;
+  height: auto;
+}
+
 td {
-    width: 19.6%;
+    width: 15%;
     height: 100px;
-    overflow: hidden;
+    /*overflow: hidden;
     vertical-align: bottom;
     display: inline-block;
-    white-space: nowrap;
+    white-space: nowrap;*/
 }
 
 td.gallery {

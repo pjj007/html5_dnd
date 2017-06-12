@@ -19,11 +19,30 @@
 
 <h2>UPLOAD YOUR PICTURES</h2>
 
+  <div>
   <input type="file" id="files" name="files[]" multiple />
-  <output id="list" ondrop="drop(event)" ondragover="allowDrop(event)"></output>
+<ul id="palette" >
+  <li id="frames" class="frames" ondragover="allowDrop(event)"  ondrop="drop(event)"><img src="USCLOGO.jpg" id="usc"width="100px" > </li>
 
+  <!-- <div id="upload-pic"> -->
+    <!-- <output> -->
+    <!-- <p><div id="list" ></div></p> -->
+    <!-- </output> -->
+</ul>
+    <!-- <progress id="progress" min="0" max="100" value="0">0</progress> -->
+
+  <!-- <output id="list" ondrop="drop(event)" ondragover="allowDrop(event)"></output> -->
+</div>
+  <div id="submitbtn">
+  <button type="submit" id="subbtn"   onclick="upload_image()" value="Submit">Submit</button>
+</div>
+
+</div>
 <div>
 <h2>Scene</h2>
+<div style="overflow-x:auto;">
+<!-- <div id="table_layout"> -->
+
 <table>
   <tr>
   <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
@@ -58,11 +77,21 @@
   </tr>
 </table>
 </div>
+</div>
+<br>
+
+
+<button onclick="del()">Delete Image</button>
+
+<button type="reset" value="Reset">Reset</button>
+
+<button type="submit" value="Submit">Submit</button>
+
 
 <br>
-<img id="drag1" src="USCLOGO.jpg" draggable="true" ondragstart="drag(event)" width="336" height="69">
-<img id="drag2" src="USCLOGO.jpg" draggable="true" ondragstart="drag(event)" width="336" height="69">
-
+<!-- <img id="drag1" src="USCLOGO.jpg" draggable="true" ondragstart="drag(event)" width="336" height="69">
+<img id="drag2" src="USCLOGO.jpg" draggable="true" ondragstart="drag(event)" width="336" height="69"> -->
+<br>
 </body>
 
 <script src="https://www.gstatic.com/firebasejs/4.1.2/firebase.js"></script>
