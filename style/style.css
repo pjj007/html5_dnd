@@ -1,3 +1,77 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/************************************************************************************
+Top Main Menu Navigation Elements
+*************************************************************************************/
+
+.top-nav {
+	position: fixed;
+	width: 100%;
+	height: 75px;
+	z-index: 900;
+	background: rgba(241,111,92,1);
+	background: -moz-linear-gradient(left, rgba(241,111,92,1) 0%, rgba(241,111,92,1) 29%, rgba(232,15,106,1) 78%, rgba(232,15,106,1) 100%);
+	background: -webkit-gradient(left top, right top, color-stop(0%, rgba(241,111,92,1)), color-stop(29%, rgba(241,111,92,1)), color-stop(78%, rgba(232,15,106,1)), color-stop(100%, rgba(232,15,106,1)));
+	background: -webkit-linear-gradient(left, rgba(241,111,92,1) 0%, rgba(241,111,92,1) 29%, rgba(232,15,106,1) 78%, rgba(232,15,106,1) 100%);
+	background: -o-linear-gradient(left, rgba(241,111,92,1) 0%, rgba(241,111,92,1) 29%, rgba(232,15,106,1) 78%, rgba(232,15,106,1) 100%);
+	background: -ms-linear-gradient(left, rgba(241,111,92,1) 0%, rgba(241,111,92,1) 29%, rgba(232,15,106,1) 78%, rgba(232,15,106,1) 100%);
+	background: linear-gradient(to right, rgba(241,111,92,1) 0%, rgba(241,111,92,1) 29%, rgba(232,15,106,1) 78%, rgba(232,15,106,1) 100%);
+ 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f16f5c', endColorstr='#e80f6a', GradientType=1 );
+}
+
+.nav-content {
+	width: 1200px;
+	height: 75px;
+	margin: 0 auto;
+}
+
+.nav-top {
+	float: right;
+	list-style-type: none;/*	background-color: brown;*/
+	margin: 32px 0 0;
+}
+
+.nav-top li {
+	display: inline;
+	float: left;
+	font-size: 14px; /*	Add a grey right border to all list items, except the last item (last-child) */
+}
+
+.nav-top li:last-child {
+	border-right: none; /* Add a grey right border to all list items, except the last item (last-child) */
+}
+
+.nav-top a {
+	text-decoration: none;
+	padding: 0 30px 0 30px;
+	color: #ffffff;
+}
+
+.nav-top a:link {
+	color: #ffffff;
+	padding: 32px 30px 27px 30px;
+}
+
+.nav-top a:hover {
+	color: #000000;
+}
+
+.nav-top > .active > a {
+	color: #fcc71f;
+}
+
+.nav-top > .active-d > a {
+	color: #000;
+}
+
+
+
+
+
+
+
+
 #holder > * {
     display: block;
     margin: auto;

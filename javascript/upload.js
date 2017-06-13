@@ -26,6 +26,8 @@ var storageRef = storage.ref();
 // Create a child reference
 var imagesRef = storageRef.child('images');
 
+var image_counter = 0;
+
 // upload an image to Google Firebase
 function upload_image(img_name, img_data) {
   console.log("Uploading", img_name, "data:", img_data);
@@ -34,6 +36,10 @@ function upload_image(img_name, img_data) {
     console.log('Uploaded ' + img_name + " successfully.");
   });
 }
+
+// function upload_json(scene_name, scene_data){
+//   var ref =
+// }
 
 function handleFileSelect(ev) {
   var files = ev.target.files; // FileList object
@@ -56,15 +62,51 @@ function handleFileSelect(ev) {
       return function(e) {
         // Render thumbnail.
         console.log("reader onload", ev);
-        var span = document.createElement('span');
-        var item = document.createElement('li');
+        var item = document.createElement('td');
         var palette = document.getElementById('palette');
-        item.innerHTML = ['<img class="thumb" src="', e.target.result,
-                          '" title="', escape(theFile.name), '"/>'].join('');
         if (palette != null) {
           palette.appendChild(item);
-        } else console.log("failed to append");
+        } else {
+          console.log("failed to append");
+        }
+        item.innerHTML = ['<img class="thumb"',
+                          ' src="', e.target.result,'"',
+                          ' draggable="true"',
+                          ' ondragstart="dragstart(event)"',
+                          ' id="', escape(theFile.name), '"',
+                          ' title="', escape(theFile.name), '"/>'].join('');
+//look at the end
 
+        // document.getElementById('list').insertBefore(span, null);
+        document.getElementById('subbtn').onclick = function(){
+          for (var i = 0, f; f = files[i]; i++) {
+          var file= files[i];
+          upload_image(file.name, file)};
+        }
+        // upload_image(file.name, file);
+      };
+    })(f);
+
+    // Read in the image file as a data URL.
+    reader.readAsDataURL(f);
+      // document.getElementById('subbtn').onclick = upload_image(file.name, file);
+
+  //   function handleDragOver(evt) {
+  //     console.log("dropeffect",evt);
+  //   evt.stopPropagation();
+  //   evt.preventDefault();
+  //   evt.dataTransfer.dropEffect = 'move'; // Explicitly show this is a copy.
+  // }
+
+  }
+
+}
+
+document.getElementById('files').addEventListener('change', handleFileSelect, false);
+
+
+
+/*
         current_i = filesCount.shift();
           if(current_i === 0) {
             prev_i = files.length - 1;
@@ -76,7 +118,7 @@ function handleFileSelect(ev) {
           } else {
             next_i = current_i + 1;
           }
-
+*/
 
           // output.innerHTML = output.innerHTML + '<li id="slide-' + current_i +
           // '" class="slide">' + "<img src='" + files.result + "'" + "title=''/>"
@@ -88,45 +130,31 @@ function handleFileSelect(ev) {
 
 
 
-        for ( var i = ev ; i < ev ; i++ ) {
+/*
         var img = document.createElement('img');
-        if (i < 10) {
-          img.setAttribute("src", "0" + i + ".jpg");
-        } else {
-          img.setAttribute("src", i + ".jpg");
-        }
-        console.log("img tag", img);
+
+
+        img.setAttribute("id", "upload" + image_counter);
+        image_counter++;
+
+        console.log("id", img.id);
         img.class = "thumb";
         img.src = e.target.result;
         img.title = escape(theFile.name);
         img.draggable = true;
+        // img.ondrop = "drop(event)";
+        img.addEventListener("ondragstart", function(ev) {
+          console.log("ondragstart", ev);
+          dragstart(ev);
+        });
         img.width = '100px';
-        img.ondragover = 'allowDrop(event)';
-        img.id = escape(theFile.name);
-        img.id != 0;
-        img.id = "abc";
+        img.addEventListener("ondragover", function(event) {
+          console.log("ondragover", event);
+          allowDrop(event);
+        });
+        // img.id = escape(theFile.name);
+        // img.id != 0;
+        // img.id = "abc";
         item.appendChild(img);
         palette.appendChild(item);
-      }
-        // document.getElementById('list').insertBefore(span, null);
-        document.getElementById('subbtn').onclick = function(){
-          upload_image(file.name, file)};
-        // upload_image(file.name, file);
-      };
-    })(f);
-
-    // Read in the image file as a data URL.
-    reader.readAsDataURL(f);
-      // document.getElementById('subbtn').onclick = upload_image(file.name, file);
-
-      function handleDragOver(evt) {
-    evt.stopPropagation();
-    evt.preventDefault();
-    evt.dataTransfer.dropEffect = 'copy'; // Explicitly show this is a copy.
-  }
-
-  }
-
-}
-
-document.getElementById('files').addEventListener('change', handleFileSelect, false);
+*/

@@ -17,18 +17,43 @@
 
 <body>
 
+<!--
+
+  <div class="top-nav">
+  	<div class="nav-content">
+  		<a href="index.html">
+  		<img class="top-left-logo" src="image/cave_logo.png" width="80px" height="57px" alt="sunshine butterflies logo">
+  		</a>
+  		<ul class="nav-top">
+          	  <li class="active"><a href="index.html">HOME</a></li>
+          	  <li><a href="about.html">Cave Scene</a>
+
+                  		<li><a href="who-we-are.html">Collab Scene</a></li>
+
+                  </li>
+                  <li><a href="gallery.html">GALLERY</a></li>
+  				<li><a href="contact.html">CONTACT US</a></li>
+  		</ul>
+  	</div>
+  </div>
+
+-->
+
+
 <h2>UPLOAD YOUR PICTURES</h2>
 
   <div>
   <input type="file" id="files" name="files[]" multiple />
-<ul id="palette" >
-  <li id="frames" class="frames" ondragover="allowDrop(event)"  ondrop="drop(event)"><img src="USCLOGO.jpg" id="usc"width="100px" > </li>
-
+<table id="palette" >
+  <tr>
+  <!-- <td id="frames" class="frames" ondragover="allowDrop(event)"  ondrop="drop(event)"><img src="USCLOGO.jpg" id="usc"width="100px"ondragstart="dragstart(event)" > </td>
+<td id="frames" class="frames" ondragover="allowDrop(event)"  ondrop="drop(event)"><img src="USCLOGO.jpg" id="usc2"width="100px"ondragstart="dragstart(event)" > </td> -->
+</tr>
   <!-- <div id="upload-pic"> -->
     <!-- <output> -->
     <!-- <p><div id="list" ></div></p> -->
     <!-- </output> -->
-</ul>
+</table>
     <!-- <progress id="progress" min="0" max="100" value="0">0</progress> -->
 
   <!-- <output id="list" ondrop="drop(event)" ondragover="allowDrop(event)"></output> -->
@@ -43,13 +68,13 @@
 <div style="overflow-x:auto;">
 <!-- <div id="table_layout"> -->
 
-<table>
-  <tr>
-  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
-  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
-  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
-  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
-  <td ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+<table onsubmit="make_json(this);">
+  <tr id="tr_1">
+  <td id="tr1_td1" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td id="tr1_td2" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td id="tr1_td3" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td id="tr1_td4" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
+  <td id="tr1_td5" ondragover="allowDrop(event)" ondrop="drop(event)" ondragstart="dragstart(event)" ondragend="dragend(event)">Drag here</td>
   </tr>
 
   <tr>
@@ -85,7 +110,7 @@
 
 <button type="reset" value="Reset">Reset</button>
 
-<button type="submit" value="Submit">Submit</button>
+<button type="submit" value="Save Scene">Save Scene</button>
 
 
 <br>

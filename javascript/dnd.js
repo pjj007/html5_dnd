@@ -1,11 +1,9 @@
+var draggingId = "";
+
 function allowDrop(ev) {
-  console.log("allow drop", ev);
+  // console.log("allow drop", ev);
     ev.preventDefault();
 
-}
-
-function drag(ev) {
-    ev.dataTransfer.setData("text", ev.target.id);
 }
 
 function drop(ev) {
@@ -17,10 +15,11 @@ function drop(ev) {
     while (ev.target.firstChild) {
       ev.target.removeChild(ev.target.firstChild);
     }
-
-    var img = document.getElementById(data);
-    console.log("image data", data, ev.target, "ev:", ev, "img:", img, "from:", ev.dataTransfer.dragStartedFrom);
-    if(img != null) ev.target.appendChild(img);
+    var id = draggingId;
+    var img = document.getElementById(id);
+    img.id = img.id+ "_2";
+    console.log("draggingId", id, "ev.target", ev.target, "ev:", ev, "img:", img);
+    ev.target.appendChild(img);
 
     // if (img == null) {
     //     img.appendChild(img);
@@ -36,9 +35,9 @@ function drop(ev) {
 }
 
 function dragstart(ev) {
- console.log("dragStart", ev, "parent:", ev.target.parentElement);
- ev.dataTransfer["dragStartedFrom"] = ev.target.parentElement;
- //ev.dataTransfer.setData("text", ev.target.id);
+ draggingId = ev.target.id;
+ ev.dataTransfer.setData("text", ev.target.id);
+  console.log("dragstart", ev, "id:", draggingId);
 }
 
 function dragend(ev) {
